@@ -1,0 +1,16 @@
+# Maintainer: Damjan Georgievski <gdamjan@gmail.com>
+pkgname=xdg-config-bashrc
+pkgver=1.0
+pkgrel=1
+pkgdesc='Load bash startup scripts from $XDG_CONFIG_HOME/bash'
+arch=('any')
+url="https://aur.archlinux.org/packages/${pkgname}"
+license=('GPL-3.0-or-later')
+depends=('bash')
+source=("load-xdg-config.sh")
+
+package() {
+  install -Dm644 "${srcdir}/load-xdg-config.sh" "${pkgdir}/etc/profile.d/zz-load-xdg-config.sh"
+}
+
+sha256sums=('ad84e60ef360aaabaf9b1b832ace552612cf8f8bc7a3a5d4b68fb00eb1d54bc7')

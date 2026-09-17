@@ -1,0 +1,29 @@
+pkgbase = minijinja
+	pkgdesc = A powerful but minimal dependency template engine for Rust compatible with Jinja/Jinja2
+	pkgver = 2.24.0
+	pkgrel = 1
+	url = https://github.com/mitsuhiko/minijinja
+	arch = x86_64
+	license = Apache-2.0
+	checkdepends = python-pytest
+	makedepends = cargo
+	makedepends = git
+	makedepends = python-build
+	makedepends = python-installer
+	makedepends = python-markupsafe
+	makedepends = python-maturin
+	makedepends = python-wheel
+	source = minijinja-cli-2.24.0.tar.gz::https://github.com/mitsuhiko/minijinja/releases/download/2.24.0/source.tar.gz
+	sha256sums = a369dfac2a72e807eb44004281dcd36d3b7df42f5b2148f04a928c7dc1abf8fc
+
+pkgname = minijinja-cli
+	pkgdesc = A powerful but minimal dependency template engine for Rust compatible with Jinja/Jinja2 (CLI utility)
+	depends = glibc
+	depends = libgcc
+
+pkgname = python-minijinja
+	pkgdesc = A powerful but minimal dependency template engine for Rust compatible with Jinja/Jinja2 (Python bindings)
+	depends = glibc
+	depends = libgcc
+	depends = python
+	depends = python-markupsafe

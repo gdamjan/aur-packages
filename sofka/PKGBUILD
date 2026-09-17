@@ -1,0 +1,33 @@
+# Maintainer: Дамјан Георгиевски <gdamjan@gmail.com>
+pkgname=sofka
+pkgver=0.28.1
+pkgrel=1
+pkgdesc="a Kubernetes TUI, reimagined in Rust - built on kube-rs and ratatui, async-first from the ground up"
+url="https://sofka.rs/"
+arch=('x86_64' 'aarch64')
+license=('Apache-2.0')
+depends=(
+    gcc-libs
+    glibc
+)
+makedepends=('rust')
+options=('!lto' '!debug')
+source=("https://github.com/nklmilojevic/sofka/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
+
+prepare() {
+    cd "${srcdir}/${pkgname}-${pkgver}"
+    cargo fetch --locked
+}
+
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  cargo build --release --locked
+}
+
+package() {
+  install -Dm755 -t "${pkgdir}/usr/bin" \
+    "${srcdir}/${pkgname}-${pkgver}/target/release/sofka"
+}
+
+sha512sums=('f6b023562bcdc2f525dbb34abef0228a13b1b337b3179f7dd3b2d544827e3119fb5b0772c9786efecd71e4e5e81552247cff65fb436800fabff64a4b5feb5862')

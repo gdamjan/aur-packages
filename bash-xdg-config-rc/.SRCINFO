@@ -1,0 +1,12 @@
+pkgbase = xdg-config-bashrc
+	pkgdesc = Load bash startup scripts from $XDG_CONFIG_HOME/bash
+	pkgver = 1.0
+	pkgrel = 1
+	url = https://aur.archlinux.org/packages/xdg-config-bashrc
+	arch = any
+	license = GPL-3.0-or-later
+	depends = bash
+	source = load-xdg-config.sh
+	sha256sums = ad84e60ef360aaabaf9b1b832ace552612cf8f8bc7a3a5d4b68fb00eb1d54bc7
+
+pkgname = xdg-config-bashrc

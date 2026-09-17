@@ -1,0 +1,17 @@
+pkgbase = sofka
+	pkgdesc = a Kubernetes TUI, reimagined in Rust - built on kube-rs and ratatui, async-first from the ground up
+	pkgver = 0.28.1
+	pkgrel = 1
+	url = https://sofka.rs/
+	arch = x86_64
+	arch = aarch64
+	license = Apache-2.0
+	makedepends = rust
+	depends = gcc-libs
+	depends = glibc
+	options = !lto
+	options = !debug
+	source = https://github.com/nklmilojevic/sofka/archive/v0.28.1/sofka-0.28.1.tar.gz
+	sha512sums = f6b023562bcdc2f525dbb34abef0228a13b1b337b3179f7dd3b2d544827e3119fb5b0772c9786efecd71e4e5e81552247cff65fb436800fabff64a4b5feb5862
+
+pkgname = sofka
