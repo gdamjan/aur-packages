@@ -1,6 +1,6 @@
 # Maintainer: Damjan Georgievski <gdamjan@gmail.com>
 pkgname=wac
-pkgver=0.11.0 # renovate: datasource=github-tags depName=bytecodealliance/wac
+pkgver=0.12.0 # renovate: datasource=github-tags depName=bytecodealliance/wac
 pkgrel=1
 pkgdesc="WebAssembly Composition (WAC) tooling"
 arch=("x86_64")
