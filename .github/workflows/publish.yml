@@ -29,6 +29,19 @@ jobs:
           set -euo pipefail
 
           packages=$(.github/scripts/find-changed-packages.sh "$BASE_SHA" "$HEAD_SHA")
+
+          # Skip packages flagged with a .skip-publish file
+          publishable=()
+          for pkg in $(jq -r '.[]' <<<"$packages"); do
+            if [[ -e "$pkg/.skip-publish" ]]; then
+              echo "Skipping $pkg (.skip-publish present)"
+            else
+              publishable+=("$pkg")
+            fi
+          done
+          packages=$(printf '%s\n' "${publishable[@]}" |
+            jq --raw-input --slurp --compact-output 'split("\n") | map(select(length > 0))')
+
           echo "count=$(jq length <<<"$packages")" >> "$GITHUB_OUTPUT"
           echo "packages=$packages" >> "$GITHUB_OUTPUT"
 
