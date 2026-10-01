@@ -35,4 +35,4 @@ package() {
   install -Dm0755 $_realname-$pkgver/target/$CARCH-unknown-linux-gnu/release/spin "$pkgdir"/usr/bin/spin-cli
 }
 
-sha256sums=('f7bc0392b6e25375aa47021f0f5d8172386aeb34eb7d27535195eda9095d89c9')
+sha256sums=('fce181430d3b6cb578fc004370dbca937cad1c26c7fcc1c37316e4535202bbb5')
