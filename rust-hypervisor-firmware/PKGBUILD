@@ -1,6 +1,6 @@
 # Maintainer: Damjan Georgievski <gdamjan@gmail.com>
 pkgname=rust-hypervisor-firmware
-pkgver=0.5.0
+pkgver=0.5.0 # renovate: datasource=github-tags depName=cloud-hypervisor/rust-hypervisor-firmware
 pkgrel=2
 pkgdesc="Rust Hypervisor Firmware"
 url="https://github.com/cloud-hypervisor/rust-hypervisor-firmware"
