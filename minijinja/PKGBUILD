@@ -19,6 +19,7 @@ makedepends=(
   python-installer
   python-markupsafe
   python-maturin
+  python-pytest
   python-wheel
 )
 checkdepends=(python-pytest)
