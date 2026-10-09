@@ -1,7 +1,7 @@
 # Maintainer: Дамјан Георгиевски <gdamjan@gmail.com>
 # Maintainer: zer0def <zer0def@github>
 pkgname=cloud-hypervisor
-pkgver=51.1 # renovate: datasource=github-tags depName=cloud-hypervisor/cloud-hypervisor
+pkgver=51.2 # renovate: datasource=github-tags depName=cloud-hypervisor/cloud-hypervisor
 pkgrel=1
 pkgdesc="A Virtual Machine Monitor for modern Cloud workloads"
 url="https://github.com/cloud-hypervisor/cloud-hypervisor"
