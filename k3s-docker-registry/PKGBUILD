@@ -1,0 +1,18 @@
+# Maintainer: Damjan Georgievski <gdamjan@gmail.com>
+pkgname=k3s-docker-registry
+pkgver=1.0
+pkgrel=1
+arch=('any')
+pkgdesc=""
+url="https://aur.archlinux.org/packages/k3s-docker-registry"
+license=('GPL')
+depends=('k3s')
+source=('docker-registry.yaml' 'registries.yaml')
+
+package() {
+    install -Dm755 "${srcdir}/docker-registry.yaml" "${pkgdir}/usr/share/k3s-docker-registry/"
+    install -Dm755 "${srcdir}/registries.yaml" "${pkgdir}/etc/rancher/k3s/registries.yaml"
+}
+
+sha256sums=('5de525e93a68675f3967fc2ba15f7b0d62cb3e4a88016ec8c93d9dbb08c6a16c'
+            'd777fe45e8630e2f3cdbc6d66e35a2cee23ed780282448ed64c6a758daaf2b4a')

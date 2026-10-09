@@ -1,0 +1,12 @@
+# TODO
+[Unit]
+Description=
+Before=k3s.service
+
+[Service]
+Type=oneshot
+Exec=/usr/bin/cp 
+
+
+[Install]
+WantedBy=k3s.service

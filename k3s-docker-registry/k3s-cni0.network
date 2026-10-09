@@ -1,0 +1,18 @@
+# /etc/systemd/network/k3s-cni0.network
+[Match]
+Name=cni0
+Type=bridge
+Kind=bridge
+
+[Link]
+RequiredForOnline=no
+ActivationPolicy=always-up
+
+[Network]
+# Default values from https://docs.k3s.io/cli/server#networking
+Domains=~cluster.internal
+DNS=10.43.0.10
+
+#[Route]
+#Destination=10.43.0.0/16
+#Gateway=10.42.0.1
