@@ -1,7 +1,7 @@
 # Maintainer: Damjan Georgievski <gdamjan@gmail.com>
 
 pkgname=sdkmanager
-pkgver=0.7.0 # renovate: datasource=gitlab-tags depName=fdroid/sdkmanager
+pkgver=0.7.1 # renovate: datasource=gitlab-tags depName=fdroid/sdkmanager
 pkgrel=1
 pkgdesc="a drop-in replacement for sdkmanager from the Android SDK written in Python"
 arch=('any')
