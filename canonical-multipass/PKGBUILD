@@ -10,7 +10,7 @@ url="https://multipass.run"
 license=('GPL-3.0-only')
 source=("git+https://github.com/canonical/${_realname}.git#tag=v${pkgver}"
         multipassd.service)
-depends=('glibc' 'gcc-libs' 'systemd-libs' 'apparmor' 'openssl' 'qt6-base' 'qemu-base')
+depends=('glibc' 'libgcc' 'systemd-libs' 'apparmor' 'openssl' 'qt6-base' 'qemu-base')
 makedepends=('git' 'cmake' 'libvirt')
 optdepends=(
     'libvirt: to use the libvirt driver'
