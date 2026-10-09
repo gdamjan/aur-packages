@@ -8,8 +8,8 @@ url="https://github.com/cloud-hypervisor/cloud-hypervisor"
 arch=('x86_64' 'aarch64')
 license=('Apache-2.0')
 depends=(
-    gcc-libs
     glibc
+    libgcc
 )
 optdepends=(
   'virtiofsd: rust implementation of virtiofsd'
@@ -35,7 +35,6 @@ package() {
     "${srcdir}/${pkgname}-${pkgver}/target/release/cloud-hypervisor"
   #install -Dm755 -t "${pkgdir}/usr/lib/cloud-hypervisor" \
   #  "${srcdir}/${pkgname}-${pkgver}/target/release/vhost_user_blk" \
-  #  "${srcdir}/${pkgname}-${pkgver}/target/release/vhost_user_fs" \
   #  "${srcdir}/${pkgname}-${pkgver}/target/release/vhost_user_net"
 }
 
