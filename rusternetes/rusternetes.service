@@ -1,0 +1,29 @@
+[Unit]
+Description=Kubernetes, reimplemented in Rust
+Documentation=https://calfonso.github.io/rusternetes/
+
+[Service]
+Type=exec
+StateDirectory=rusternetes
+RuntimeDirectory=rusternetes
+Environment=STORAGE_BACKEND=sqlite
+Environment=DATA_DIR=/var/lib/rusternetes/rusternetes.db
+Environment=VOLUME_DIR=/var/lib/rusternetes/volumes
+EnvironmentFile=-/etc/default/rusternetes.env
+
+ExecStart=/usr/bin/rusternetes \
+    --console-dir /usr/share/webapps/rusternetes \
+    --storage-backend $STORAGE_BACKEND \
+    --data-dir $DATA_DIR \
+    --volume-dir $VOLUME_DIR
+TimeoutStartSec=0
+Restart=always
+RestartSec=5s
+
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,27 @@
+pkgbase = rusternetes
+	pkgdesc = Kubernetes, reimplemented in Rust
+	pkgver = 0.0.0
+	pkgrel = 1
+	url = https://github.com/calfonso/rusternetes
+	arch = x86_64
+	arch = aarch64
+	license = Apache-2.0
+	makedepends = rust
+	makedepends = npm
+	depends = gcc-libs
+	depends = glibc
+	optdepends = podman
+	optdepends = docker
+	optdepends = iptables
+	optdepends = iproute2
+	options = !lto
+	options = !debug
+	backup = etc/default/rusternetes.env
+	source = rusternetes-0.0.0.tar.gz::https://github.com/calfonso/rusternetes/archive/refs/heads/main.tar.gz
+	source = rusternetes.service
+	source = rusternetes.env
+	sha256sums = SKIP
+	sha256sums = 43a555c5368ea8b80ad30babc63b3e92887e23c4ceeade464acfbcc51070d379
+	sha256sums = ffbe95fb8edfd09acfbd7e8daa6a2bd06910252e7d7dfb2f03d28a50b0c62d14
+
+pkgname = rusternetes

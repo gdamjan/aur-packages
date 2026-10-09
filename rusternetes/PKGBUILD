@@ -1,0 +1,52 @@
+# Maintainer: Дамјан Георгиевски <gdamjan@gmail.com>
+pkgname=rusternetes
+pkgver=0.0.0
+# temporary
+_tag=main
+pkgrel=1
+pkgdesc="Kubernetes, reimplemented in Rust"
+url="https://github.com/calfonso/rusternetes"
+arch=("x86_64" "aarch64")
+license=("Apache-2.0")
+backup=("etc/default/rusternetes.env")
+depends=(
+    gcc-libs
+    glibc
+)
+optdepends=("podman" "docker" "iptables" "iproute2")
+makedepends=("rust" "npm")
+options=("!lto" "!debug")
+source=(
+    "${pkgname}-${pkgver}.tar.gz::https://github.com/calfonso/rusternetes/archive/refs/heads/${_tag}.tar.gz"
+    rusternetes.service
+    rusternetes.env
+)
+
+prepare() {
+  cd "${srcdir}/${pkgname}-${_tag}"
+  cargo fetch --locked
+}
+
+build() {
+  cd "${srcdir}/${pkgname}-${_tag}"
+  cargo build --release --locked --bin ${pkgname}
+
+  cd console/
+  npm ci --ignore-scripts
+  npm run build
+}
+
+package() {
+  install -Dm755 -t "${pkgdir}/usr/bin" \
+    "${srcdir}/${pkgname}-${_tag}/target/release/${pkgname}"
+
+  mkdir -p "${pkgdir}/usr/share/webapps/${pkgname}/"
+  cp -r "${srcdir}/${pkgname}-${_tag}/console/dist/." -t "${pkgdir}/usr/share/webapps/${pkgname}/"
+
+  install -Dm644 -t "${pkgdir}/etc/default/" "${srcdir}/rusternetes.env"
+  install -Dm644 -t "${pkgdir}/usr/lib/systemd/system/" "${srcdir}/rusternetes.service"
+}
+
+sha256sums=('SKIP'
+            '43a555c5368ea8b80ad30babc63b3e92887e23c4ceeade464acfbcc51070d379'
+            'ffbe95fb8edfd09acfbd7e8daa6a2bd06910252e7d7dfb2f03d28a50b0c62d14')
