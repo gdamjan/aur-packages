@@ -1,6 +1,6 @@
 # Maintainer: Damjan Georgievski <gdamjan@gmail.com>
 pkgname=s3sh
-pkgver=0.2.2
+pkgver=0.2.2 # renovate: datasource=github-tags depName=dacort/s3sh
 pkgrel=1
 pkgdesc="interactive S3 shell with Unix-like commands and archive navigation"
 url="https://github.com/dacort/s3sh"
