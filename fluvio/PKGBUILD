@@ -1,6 +1,7 @@
 # Maintainer: Damjan Georgievski <gdamjan@gmail.com>
 pkgname=fluvio
-pkgver=0.18.1 # renovate: datasource=github-tags depName=fluvio-community/fluvio
+# renovate: datasource=github-tags depName=fluvio-community/fluvio
+pkgver=0.18.1
 pkgrel=1
 pkgdesc='event stream processing for developers to collect and transform data in motion to power responsive data intensive applications'
 url="https://www.fluvio.io/"
