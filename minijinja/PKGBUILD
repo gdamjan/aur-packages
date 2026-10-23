@@ -6,7 +6,7 @@ pkgname=(
   python-minijinja
 )
 # renovate: datasource=github-tags depName=mitsuhiko/minijinja
-pkgver=3.0.2
+pkgver=3.0.3
 _srcdir=minijinja-cli-${pkgver}
 pkgrel=1
 pkgdesc="A powerful but minimal dependency template engine for Rust compatible with Jinja/Jinja2"
