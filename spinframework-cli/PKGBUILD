@@ -2,7 +2,7 @@
 pkgname=spinframework-cli
 _realname=spin
 # renovate: datasource=github-tags depName=spinframework/spin
-pkgver=4.2.4
+pkgver=4.2.5
 pkgrel=1
 pkgdesc='an open source framework for building and running fast, secure, and composable cloud microservices with WebAssembly'
 arch=('x86_64')
