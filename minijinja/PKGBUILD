@@ -80,4 +80,4 @@ package_python-minijinja() {
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
 
-sha256sums=('59f8e2258fbae41496f0857d9be0250cfeaf0713ef4b1760de2444b9a3cccf4d')
+sha256sums=('12a10a55cba19b045afb28bcd54c5111693c5fab262e1dac918d2f352d2eb465')
