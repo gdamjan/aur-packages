@@ -8,7 +8,7 @@ arch=("x86_64")
 url="https://ferriskey.rs/"
 license=("Apache-2.0")
 depends=("glibc" "libgcc" "openssl")
-makedepends=("cargo" "pnpm")
+makedepends=("cargo" "pnpm" "npm")
 source=("https://github.com/ferriskey/ferriskey/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
 options=("!lto" "!debug")
 
