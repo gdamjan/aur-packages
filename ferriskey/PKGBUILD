@@ -42,4 +42,4 @@ package() {
   cp -r $pkgname-$pkgver/front/dist/. "$pkgdir"/usr/share/webapps/$pkgname
 }
 
-sha256sums=('f5b96d859870cc072fa3012e26c785dc977a6fe95ee49aee23e1aef0ba168d20')
+sha256sums=('1041dd45439459519453d32553198a670a7233767d74baf11b1105a264139cd5')
